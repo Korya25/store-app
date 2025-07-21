@@ -2,10 +2,14 @@ import 'dart:io';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:store_app/core/app/env_varible.dart';
 import 'package:store_app/store_app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await EnvVarible.instance.init(envType: EnvTypeEnum.prod);
+
   Platform.isAndroid
       ? await Firebase.initializeApp(
           options: FirebaseOptions(
@@ -16,6 +20,7 @@ void main() async {
           ),
         )
       : await Firebase.initializeApp();
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
   runApp(const StoreApp());
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/core/app/env_varible.dart';
 
 class StoreApp extends StatelessWidget {
   const StoreApp({super.key});
@@ -7,7 +8,7 @@ class StoreApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: EnvVarible.instance.debugMode,
       title: 'Store App',
       home: Scaffold(
         appBar: AppBar(title: Text('Store App')),
