@@ -7,7 +7,8 @@ class StoreApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Store App ',
+      debugShowCheckedModeBanner: false,
+      title: 'Store App',
       home: Scaffold(
         appBar: AppBar(title: Text('Store App')),
 
