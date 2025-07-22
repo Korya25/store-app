@@ -10,6 +10,11 @@ class ConnectivityController {
 
   final ValueNotifier<bool> isConnected = ValueNotifier(false);
 
+  bool _isFirstCheck = true;
+
+  /// يستخدم في واجهات UI لمعرفة إن التحقق الأول تم
+  bool hasInitialized = false;
+
   Future<void> init() async {
     AppLogger.info(
       '📡 [ConnectivityController] Starting connectivity initialization...',
@@ -26,15 +31,15 @@ class ConnectivityController {
 
     await _verifyInternet(firstResult);
 
-    Connectivity().onConnectivityChanged.listen((
-      List<ConnectivityResult> results,
-    ) {
+    // ✅ إشارة إلى أن التحقق الأول انتهى
+    hasInitialized = true;
+
+    Connectivity().onConnectivityChanged.listen((results) {
       final ConnectivityResult result = results.isNotEmpty
           ? results.first
           : ConnectivityResult.none;
 
       AppLogger.warn('🔄 Connectivity Changed: $result');
-
       _verifyInternet(result);
     });
   }
@@ -42,14 +47,17 @@ class ConnectivityController {
   Future<void> _verifyInternet(ConnectivityResult result) async {
     AppLogger.info('🌐 Verifying internet access for: $result...');
 
-    final hasInternet = await InternetConnectionChecker.instance.hasConnection;
+    final checker = InternetConnectionChecker.createInstance();
+    final hasInternet = await checker.hasConnection;
 
-    if (hasInternet) {
-      AppLogger.info('✅ Internet is available');
-    } else {
-      AppLogger.error('❌ No internet access');
+    if (_isFirstCheck) {
+      _isFirstCheck = false;
+      isConnected.value = hasInternet;
+      return;
     }
 
-    isConnected.value = hasInternet;
+    if (isConnected.value != hasInternet) {
+      isConnected.value = hasInternet;
+    }
   }
 }
