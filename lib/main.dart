@@ -3,9 +3,9 @@ import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:store_app/core/app/env_varible.dart';
+import 'package:store_app/core/utils/env_varible.dart';
 import 'package:store_app/core/network/connectivity_controller.dart';
-import 'package:store_app/core/presentation/app/store_app.dart';
+import 'package:store_app/store_app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -7,7 +7,7 @@ class NetworkBanner {
   static Flushbar<dynamic>? _currentFlushbar;
 
   static void show(BuildContext context, NetworkStatusType status) {
-    _currentFlushbar?.dismiss(); // اغلق القديم إن وجد
+    _currentFlushbar?.dismiss();
 
     _currentFlushbar = Flushbar(
       message: status == NetworkStatusType.connected
