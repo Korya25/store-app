@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/core/network/connectivity_controller.dart';
-import 'package:store_app/core/network/network_banner..dart';
+import 'package:store_app/core/network/network_banner.dart';
 
 class NetworkStatusWrapper extends StatefulWidget {
   final Widget child;
@@ -16,26 +16,29 @@ class _NetworkStatusWrapperState extends State<NetworkStatusWrapper> {
 
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder<bool>(
-      valueListenable: ConnectivityController.instance.isConnected,
-      builder: (context, isConnected, _) {
-        WidgetsBinding.instance.addPostFrameCallback((_) {
-          if (!_hasShownInitialBanner) {
-            if (!isConnected) {
-              NetworkBanner.show(context, NetworkStatusType.disconnected);
-            }
-            _hasShownInitialBanner = true;
-          } else {
-            NetworkBanner.show(
-              context,
-              isConnected
+    return Builder(
+      builder: (innerContext) {
+        return ValueListenableBuilder<bool>(
+          valueListenable: ConnectivityController.instance.isConnected,
+          builder: (context, isConnected, _) {
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              final type = isConnected
                   ? NetworkStatusType.connected
-                  : NetworkStatusType.disconnected,
-            );
-          }
-        });
+                  : NetworkStatusType.disconnected;
 
-        return widget.child;
+              if (!_hasShownInitialBanner) {
+                if (!isConnected) {
+                  NetworkBanner.show(innerContext, type);
+                }
+                _hasShownInitialBanner = true;
+              } else {
+                NetworkBanner.show(innerContext, type);
+              }
+            });
+
+            return widget.child;
+          },
+        );
       },
     );
   }
