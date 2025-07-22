@@ -15,7 +15,23 @@ class StoreApp extends StatelessWidget {
         home: NetworkStatusWrapper(
           child: Scaffold(
             appBar: AppBar(title: const Text('Store App')),
-            body: const Center(child: Text('🏪 Welcome to Store App')),
+            body: const Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    '🏪 Welcome to Store App',
+                    style: TextStyle(fontFamily: 'Poppins'),
+                  ),
+                  Text('🏪 Welcome to Store App', style: TextStyle()),
+                  Text('محمود محمد اسماعيل ', style: TextStyle()),
+                  Text(
+                    'محمود محمد اسماعيل ',
+                    style: TextStyle(fontFamily: 'Cairo'),
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
       ),
