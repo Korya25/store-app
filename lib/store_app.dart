@@ -1,9 +1,11 @@
-// lib/store_app.dart
+// ignore_for_file: depend_on_referenced_packages
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store_app/core/resources/localization/app_localizations.dart';
 import 'package:store_app/core/resources/style/theme/app_theme.dart';
 import 'package:store_app/core/resources/router/app_router.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 class StoreApp extends StatelessWidget {
   const StoreApp({super.key});
@@ -18,6 +20,14 @@ class StoreApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routerConfig: AppRouter.router,
         theme: AppTheme.themeDark(),
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: AppLocalizations.supportedLocales,
+        locale: const Locale('en'),
       ),
     );
   }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:store_app/core/network/network_status_wrapper.dart';
+import 'package:store_app/core/resources/extensions/context_extension.dart';
+import 'package:store_app/core/resources/localization/app_localizations_keys.dart';
 import 'package:store_app/core/resources/router/app_routes.dart';
 
 class AppRouter {
@@ -12,7 +14,7 @@ class AppRouter {
         path: AppRoutes.homePath,
         builder: (context, state) => Scaffold(
           backgroundColor: Colors.blue[50],
-          appBar: AppBar(title: const Text('Home')),
+          appBar: AppBar(title: Text(context.tr(LangKeys.changeToTheLanguage))),
           body: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
