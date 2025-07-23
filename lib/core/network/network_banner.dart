@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:store_app/core/constants/app_colors.dart';
 import 'package:store_app/core/constants/app_strings.dart';
 import 'package:store_app/core/presentation/widgets/custom_flushbar.dart';
 
@@ -12,8 +11,8 @@ class NetworkBanner {
         : AppStrings.disconnected;
 
     final color = status == NetworkStatusType.connected
-        ? AppColors.snackBarBackgroundSuccess
-        : AppColors.snackBarBackgroundFailure;
+        ? Colors.green
+        : Colors.red;
 
     CustomFlushbar.custom(
       context: context,

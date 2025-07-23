@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:store_app/core/network/network_status_wrapper.dart';
-import 'package:store_app/core/resources/app_routes.dart';
+import 'package:store_app/core/resources/router/app_routes.dart';
 
 class AppRouter {
   static final GoRouter router = GoRouter(

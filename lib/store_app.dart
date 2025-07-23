@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/resources/app_router.dart';
+import 'package:store_app/core/resources/style/theme/app_theme.dart';
+import 'package:store_app/core/resources/router/app_router.dart';
 
 class StoreApp extends StatelessWidget {
   const StoreApp({super.key});
@@ -16,6 +17,7 @@ class StoreApp extends StatelessWidget {
         title: 'Store App',
         debugShowCheckedModeBanner: false,
         routerConfig: AppRouter.router,
+        theme: AppTheme.themeDark(),
       ),
     );
   }
