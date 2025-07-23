@@ -19,14 +19,16 @@ class StoreApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routerConfig: AppRouter.router,
         theme: AppTheme.themeDark(),
+
+        // Localizations
+        locale: const Locale('en'),
+        supportedLocales: AppLocalizations.supportedLocales,
         localizationsDelegates: const [
           AppLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        supportedLocales: AppLocalizations.supportedLocales,
-        locale: const Locale('en'),
       ),
     );
   }

@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
-class AppFonts {
+class AppFontHandler {
   // Font Family Names
-  static const String poppins = 'Poppins';
   static const String cairo = 'Cairo';
+  static const String poppins = 'Poppins';
+
+  static String getLocalizedFontFamily() {
+    final currentLanguage = 'ar'; // Replace this with localization logic later
+    return currentLanguage == 'ar' ? cairo : poppins;
+  }
 
   // Font Weights
   static const FontWeight light = FontWeight.w300;

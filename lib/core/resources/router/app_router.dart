@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:store_app/core/network/network_status_wrapper.dart';
 import 'package:store_app/core/resources/extensions/context_extension.dart';
 import 'package:store_app/core/resources/localization/app_localizations_keys.dart';
 import 'package:store_app/core/resources/router/app_routes.dart';
@@ -33,25 +32,20 @@ class AppRouter {
       GoRoute(
         name: AppRoutes.product,
         path: AppRoutes.productPath,
-        builder: (context, state) => NetworkStatusWrapper(
-          child: Scaffold(
-            backgroundColor: Colors.green[50],
-            appBar: AppBar(title: const Text('Product')),
-            body: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    '📦 Product Screen',
-                    style: TextStyle(fontSize: 24),
-                  ),
-                  const SizedBox(height: 16),
-                  TextButton(
-                    onPressed: () => context.pushNamed(AppRoutes.settings),
-                    child: const Text('Go to Settings'),
-                  ),
-                ],
-              ),
+        builder: (context, state) => Scaffold(
+          backgroundColor: Colors.green[50],
+          appBar: AppBar(title: const Text('Product')),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text('📦 Product Screen', style: TextStyle(fontSize: 24)),
+                const SizedBox(height: 16),
+                TextButton(
+                  onPressed: () => context.pushNamed(AppRoutes.settings),
+                  child: const Text('Go to Settings'),
+                ),
+              ],
             ),
           ),
         ),
