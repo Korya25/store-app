@@ -5,7 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:store_app/core/utils/env_varible.dart';
-import 'package:store_app/core/network/connectivity_controller.dart';
+import 'package:store_app/core/serivces/network/connectivity_controller.dart';
 import 'package:store_app/store_app.dart';
 
 void main() async {
