@@ -5,6 +5,10 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Padding(
+        padding: EdgeInsetsGeometry.symmetric(horizontal: 20, vertical: 20),
+      ),
+    );
   }
 }
