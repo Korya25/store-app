@@ -1,10 +1,4 @@
 class AppRoutes {
-  static const String home = 'home';
-  static const String homePath = '/';
-
-  static const String product = 'product';
-  static const String productPath = '/product';
-
-  static const String settings = 'settings';
-  static const String settingsPath = '/settings';
+  static const String login = '/login';
+  static const String signUp = '/signUp';
 }

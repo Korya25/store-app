@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/resources/localization/app_localizations.dart';
@@ -15,6 +16,9 @@ class StoreApp extends StatelessWidget {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       child: MaterialApp.router(
+        // device
+        useInheritedMediaQuery: true,
+        builder: DevicePreview.appBuilder,
         title: 'Store App',
         debugShowCheckedModeBanner: false,
         routerConfig: AppRouter.router,

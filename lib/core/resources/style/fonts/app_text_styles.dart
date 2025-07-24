@@ -13,14 +13,21 @@ class AppTextStyles {
     );
   }
 
-  static TextStyle bodySmall(BuildContext context) {
+  static TextStyle hintStyle(BuildContext context) {
     return TextStyle(
       fontFamily: AppFontHandler.getLocalizedFontFamily(),
-      fontWeight: AppFontHandler.regular,
-      fontSize: 14.sp,
       color: context.color.textColor,
+      fontWeight: FontWeight.w400,
+      fontSize: 14.sp,
     );
   }
 
-  // Add more styles as needed
+  static TextStyle errorStyle(BuildContext context) {
+    return TextStyle(
+      fontFamily: AppFontHandler.getLocalizedFontFamily(),
+      color: Colors.red,
+      fontWeight: FontWeight.w400,
+      fontSize: 12.sp,
+    );
+  }
 }

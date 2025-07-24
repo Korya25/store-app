@@ -1,5 +1,7 @@
 import 'dart:io';
+import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:store_app/core/utils/env_varible.dart';
@@ -23,5 +25,10 @@ void main() async {
       : await Firebase.initializeApp();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
-  runApp(const StoreApp());
+  runApp(
+    DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) => const StoreApp(),
+    ),
+  );
 }
