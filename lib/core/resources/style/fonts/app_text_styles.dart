@@ -30,4 +30,31 @@ class AppTextStyles {
       fontSize: 12.sp,
     );
   }
+
+  static TextStyle font24Bold(BuildContext context) {
+    return TextStyle(
+      fontFamily: AppFontHandler.getLocalizedFontFamily(),
+      fontSize: 24.sp,
+      fontWeight: AppFontHandler.bold,
+      color: context.color.textColor,
+    );
+  }
+
+  static TextStyle font16Medium(BuildContext context) {
+    return TextStyle(
+      fontFamily: AppFontHandler.getLocalizedFontFamily(),
+      fontSize: 16.sp,
+      fontWeight: AppFontHandler.medium,
+      color: context.color.textColor,
+    );
+  }
+
+  static TextStyle font16Bold(BuildContext context) {
+    return TextStyle(
+      fontFamily: AppFontHandler.getLocalizedFontFamily(),
+      fontSize: 16.sp,
+      fontWeight: AppFontHandler.bold,
+      color: Colors.white,
+    );
+  }
 }
