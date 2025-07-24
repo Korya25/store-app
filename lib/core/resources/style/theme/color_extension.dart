@@ -7,6 +7,7 @@ class MyColors extends ThemeExtension<MyColors> {
     required this.bluePinkDark,
     required this.bluePinkLight,
     required this.textColor,
+    required this.textColorSecondary,
     required this.textFormBorder,
     required this.navBarbg,
     required this.navBarSelectedTab,
@@ -20,6 +21,7 @@ class MyColors extends ThemeExtension<MyColors> {
   final Color? bluePinkDark;
   final Color? bluePinkLight;
   final Color? textColor;
+  final Color? textColorSecondary;
   final Color? textFormBorder;
   final Color? navBarbg;
   final Color? navBarSelectedTab;
@@ -34,6 +36,7 @@ class MyColors extends ThemeExtension<MyColors> {
     Color? bluePinkDark,
     Color? bluePinkLight,
     Color? textColor,
+    Color? textColorSecondary,
     Color? textFormBorder,
     Color? navBarbg,
     Color? navBarSelectedTab,
@@ -46,6 +49,7 @@ class MyColors extends ThemeExtension<MyColors> {
       bluePinkDark: bluePinkDark,
       bluePinkLight: bluePinkLight,
       textColor: textColor,
+      textColorSecondary: textColorSecondary,
       textFormBorder: textFormBorder,
       navBarbg: navBarbg,
       navBarSelectedTab: navBarSelectedTab,
@@ -69,6 +73,7 @@ class MyColors extends ThemeExtension<MyColors> {
       bluePinkDark: bluePinkDark,
       bluePinkLight: bluePinkLight,
       textColor: textColor,
+      textColorSecondary: textColorSecondary,
       textFormBorder: textFormBorder,
       navBarbg: navBarbg,
       navBarSelectedTab: navBarSelectedTab,
@@ -84,6 +89,7 @@ class MyColors extends ThemeExtension<MyColors> {
     bluePinkDark: ColorsDark.blueDark,
     bluePinkLight: ColorsDark.blueLight,
     textColor: ColorsDark.white,
+    textColorSecondary: ColorsDark.white,
     textFormBorder: ColorsDark.blueLight,
     navBarbg: ColorsDark.navBarDark,
     navBarSelectedTab: ColorsDark.white,
@@ -98,6 +104,7 @@ class MyColors extends ThemeExtension<MyColors> {
     bluePinkDark: ColorsLight.pinkDark,
     bluePinkLight: ColorsLight.pinkLight,
     textColor: ColorsLight.black,
+    textColorSecondary: ColorsLight.black,
     textFormBorder: ColorsLight.pinkLight,
     navBarbg: ColorsLight.mainColor,
     navBarSelectedTab: ColorsLight.pinkDark,

@@ -54,7 +54,25 @@ class AppTextStyles {
       fontFamily: AppFontHandler.getLocalizedFontFamily(),
       fontSize: 16.sp,
       fontWeight: AppFontHandler.bold,
-      color: Colors.white,
+      color: context.color.textColorSecondary,
+    );
+  }
+
+  static TextStyle font18BoldWhite(BuildContext context) {
+    return TextStyle(
+      fontFamily: AppFontHandler.getLocalizedFontFamily(),
+      fontSize: 18.sp,
+      fontWeight: AppFontHandler.bold,
+      color: context.color.textColorSecondary,
+    );
+  }
+
+  static TextStyle font14BluePinkLightBold(BuildContext context) {
+    return TextStyle(
+      fontFamily: AppFontHandler.getLocalizedFontFamily(),
+      fontSize: 14.sp,
+      fontWeight: AppFontHandler.bold,
+      color: context.color.bluePinkLight,
     );
   }
 }
