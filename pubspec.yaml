@@ -33,6 +33,9 @@ dependencies:
   animate_do: ^4.2.0
   freezed_annotation: ^3.1.0
   get_it: ^8.0.3
+  pretty_dio_logger: ^1.4.0
+  retrofit: ^4.6.0
+  retrofit_generator: ^10.0.0
 
 dev_dependencies:
   flutter_test:
@@ -42,6 +45,7 @@ dev_dependencies:
   flutter_launcher_icons: ^0.14.4
   build_runner: ^2.6.0
   freezed: ^3.2.0
+  json_serializable: ^6.10.0
 
 flutter:
   uses-material-design: true

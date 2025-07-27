@@ -300,12 +300,12 @@ $LanguageChangeModeStateCopyWith<LanguageChangeModeState> get copyWith => _$Lang
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is LanguageChangeModeState&&const DeepCollectionEquality().equals(other.locale, locale));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LanguageChangeModeState&&(identical(other.locale, locale) || other.locale == locale));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(locale));
+int get hashCode => Object.hash(runtimeType,locale);
 
 @override
 String toString() {
@@ -337,9 +337,9 @@ class _$LanguageChangeModeStateCopyWithImpl<$Res>
 
 /// Create a copy of AppState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? locale = freezed,}) {
+@pragma('vm:prefer-inline') $Res call({Object? locale = null,}) {
   return _then(LanguageChangeModeState(
-locale: freezed == locale ? _self.locale : locale // ignore: cast_nullable_to_non_nullable
+locale: null == locale ? _self.locale : locale // ignore: cast_nullable_to_non_nullable
 as Locale,
   ));
 }
