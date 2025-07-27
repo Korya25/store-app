@@ -6,6 +6,7 @@ import 'package:store_app/core/presentation/controller/cubit/app_cubit_cubit.dar
 import 'package:store_app/core/presentation/widgets/custom_linear_button.dart';
 import 'package:store_app/core/presentation/widgets/text_app.dart';
 import 'package:store_app/core/resources/extensions/context_extension.dart';
+import 'package:store_app/core/resources/localization/app_localizations.dart';
 import 'package:store_app/core/resources/localization/app_localizations_keys.dart';
 import 'package:store_app/core/resources/style/fonts/app_text_styles.dart';
 
@@ -36,7 +37,13 @@ class DarkAndLangButtons extends StatelessWidget {
         CustomFadeInLeft(
           duration: 400,
           child: CustomLinearButton(
-            onPressed: () {},
+            onPressed: () {
+              if (AppLocalizations.of(context).locale.languageCode == 'en') {
+                cubit.toArbic();
+              } else {
+                cubit.toEnglish();
+              }
+            },
             height: 44.h,
             width: 100.w,
             child: TextApp(

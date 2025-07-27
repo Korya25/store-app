@@ -23,7 +23,8 @@ class StoreApp extends StatelessWidget {
       create: (BuildContext context) => sl<AppCubit>()
         ..changeTHemeMode(
           sharedMode: SharedPref.preferences.getBoolean(PrefKeys.themeMode),
-        ),
+        )
+        ..getSavedLanguage(),
       child: ScreenUtilInit(
         designSize: const Size(375, 812),
         minTextAdapt: true,
@@ -42,7 +43,7 @@ class StoreApp extends StatelessWidget {
                   : AppTheme.themeLight(),
 
               // Localizations
-              locale: const Locale('en'),
+              locale: Locale(cubit.currentLangCode),
               supportedLocales: AppLocalizations.supportedLocales,
               localizationsDelegates: const [
                 AppLocalizations.delegate,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/core/serivces/shared_pref/pref_keys.dart';
+import 'package:store_app/core/serivces/shared_pref/shared_pref.dart';
 
 class AppFontHandler {
   // Font Family Names
@@ -6,7 +8,7 @@ class AppFontHandler {
   static const String poppins = 'Poppins';
 
   static String getLocalizedFontFamily() {
-    final currentLanguage = 'ar'; // Replace this with localization logic later
+    final currentLanguage = SharedPref.preferences.getString(PrefKeys.language);
     return currentLanguage == 'ar' ? cairo : poppins;
   }
 
