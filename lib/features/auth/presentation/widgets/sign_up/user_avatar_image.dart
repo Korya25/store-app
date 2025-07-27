@@ -1,5 +1,6 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/constants/app_assets.dart';
 import 'package:store_app/core/presentation/animations/animate_do.dart';
 
