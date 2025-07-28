@@ -1,5 +1,8 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:store_app/core/di/injuction.dart';
 import 'package:store_app/core/resources/router/app_routes.dart';
+import 'package:store_app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:store_app/features/auth/presentation/pages/login_page.dart';
 import 'package:store_app/features/auth/presentation/pages/sign_up_page.dart';
 
@@ -10,7 +13,10 @@ class AppRouter {
       GoRoute(
         name: AppRoutes.login,
         path: AppRoutes.login,
-        builder: (context, state) => LoginPage(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => sl<AuthBloc>(),
+          child: LoginPage(),
+        ),
       ),
       GoRoute(
         name: AppRoutes.signUp,
