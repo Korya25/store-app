@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:store_app/core/di/injuction.dart';
@@ -22,6 +23,19 @@ class AppRouter {
         name: AppRoutes.signUp,
         path: AppRoutes.signUp,
         builder: (context, state) => SignUpPage(),
+      ),
+
+      GoRoute(
+        name: AppRoutes.admin,
+        path: AppRoutes.admin,
+        builder: (context, state) =>
+            Scaffold(body: Center(child: Text('Admin Page'))),
+      ),
+      GoRoute(
+        name: AppRoutes.customer,
+        path: AppRoutes.customer,
+        builder: (context, state) =>
+            Scaffold(body: Center(child: Text('Customer Page'))),
       ),
     ],
   );

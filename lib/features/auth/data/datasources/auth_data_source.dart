@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:logger/logger.dart';
 import 'package:store_app/core/serivces/graphql/api_service.dart';
 import 'package:store_app/core/serivces/graphql/graphql_quaries/auth/auth_quaries.dart';
 import 'package:store_app/features/auth/data/models/login_request.dart';

@@ -19,6 +19,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthRepo authRepo;
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   FutureOr<void> _login(LoginEvent event, Emitter<AuthState> emit) async {
     emit(AuthState.loading());

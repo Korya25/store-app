@@ -1,4 +1,4 @@
-import 'package:store_app/core/constants/app_strings.dart';
+import 'package:store_app/core/resources/localization/app_localizations_keys.dart';
 import 'package:store_app/core/serivces/graphql/api_result.dart';
 import 'package:store_app/features/auth/data/datasources/auth_data_source.dart';
 import 'package:store_app/features/auth/data/models/login_request.dart';
@@ -16,7 +16,7 @@ class AuthRepo {
       final response = await authDataSource.login(body: body);
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(AppStrings.errorMessage);
+      return ApiResult.failure(LangKeys.loggedError);
     }
   }
 
