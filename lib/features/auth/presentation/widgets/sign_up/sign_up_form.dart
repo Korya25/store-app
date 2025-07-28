@@ -28,7 +28,7 @@ class _SignUpFormState extends State<SignUpForm> {
               controller: TextEditingController(),
               hintText: context.tr(LangKeys.fullName),
               keyboardType: TextInputType.emailAddress,
-              validator: Validator.validateName,
+              validator: (value) => Validator.validateName(value, context),
             ),
           ),
           SizedBox(height: 25.h),
@@ -39,7 +39,7 @@ class _SignUpFormState extends State<SignUpForm> {
               controller: TextEditingController(),
               hintText: context.tr(LangKeys.email),
               keyboardType: TextInputType.emailAddress,
-              validator: Validator.validateEmail,
+              validator: (value) => Validator.validateEmail(value, context),
             ),
           ),
           SizedBox(height: 25.h),
@@ -51,7 +51,7 @@ class _SignUpFormState extends State<SignUpForm> {
               hintText: context.tr(LangKeys.password),
               keyboardType: TextInputType.visiblePassword,
               obscureText: isShowPassword,
-              validator: Validator.validatePassword,
+              validator: (value) => Validator.validatePassword(value, context),
 
               suffixIcon: IconButton(
                 onPressed: () {

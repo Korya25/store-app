@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": true,
+  "editor.cursorBlinking": "blink",
+  "editor.cursorSmoothCaretAnimation": "off",
+  "editor.cursorStyle": "line",
+  "editor.cursorSurroundingLines": 0
+}

@@ -46,7 +46,7 @@ class _LoginFormState extends State<LoginForm> {
               controller: _bloc.emailController,
               hintText: context.tr(LangKeys.email),
               keyboardType: TextInputType.emailAddress,
-              validator: Validator.validateEmail,
+              validator: (value) => Validator.validateEmail(value, context),
             ),
           ),
           SizedBox(height: 25.h),
@@ -58,7 +58,7 @@ class _LoginFormState extends State<LoginForm> {
               hintText: context.tr(LangKeys.password),
               keyboardType: TextInputType.visiblePassword,
               obscureText: isShowPassword,
-              validator: Validator.validatePassword,
+              validator: (value) => Validator.validatePassword(value, context),
 
               suffixIcon: IconButton(
                 onPressed: () {

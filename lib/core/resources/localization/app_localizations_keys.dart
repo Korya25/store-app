@@ -37,4 +37,9 @@ class LangKeys {
   static const String unsubscribedToNotifications =
       'unsubscribed_to_notifications';
   static const String viewAll = 'view_all';
+  static const fieldIsRequired = 'field_is_required';
+  static const invalidName = 'invalid_name';
+  static const invalidEmail = 'invalid_email';
+  static const emailRequired = 'email_required';
+  static const passwordTooShort = 'password_too_short';
 }

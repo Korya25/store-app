@@ -35,5 +35,11 @@
     "notifications": "إشعارات",
     "subscribed_to_notifications": "تم الاشتراك في إشعارات",
     "unsubscribed_to_notifications": "تم إلغاء الاشتراك في إشعارات",
-    "view_all": "شاهد الكل"
+    "view_all": "شاهد الكل",
+"field_is_required": "هذا الحقل مطلوب.",
+  "invalid_name": "يرجى إدخال اسم صحيح (أحرف فقط).",
+  "email_required": "البريد الإلكتروني مطلوب.",
+  "invalid_email": "يرجى إدخال بريد إلكتروني صحيح.",
+  "password_too_short": "كلمة المرور يجب أن تكون 5 أحرف على الأقل."
+
 }
