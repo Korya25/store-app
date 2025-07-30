@@ -40,6 +40,6 @@
   "invalid_name": "Enter a valid name (letters only).",
   "email_required": "Email is required.",
   "invalid_email": "Enter a valid email address.",
-  "password_too_short": "Password must be at least 5 characters."
+  "password_too_short": "Password must be at least 4 characters."
     
 }

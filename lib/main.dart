@@ -34,6 +34,8 @@ void main() async {
     DevicePreview(
       enabled: !kReleaseMode,
       builder: (context) => const StoreApp(),
+      koryaadmin@gmail.com
+      1234
     ),
     */
     const StoreApp(),
