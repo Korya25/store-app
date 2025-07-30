@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/presentation/animations/animate_do.dart';
 import 'package:store_app/core/presentation/widgets/custom_text_field.dart';
 import 'package:store_app/core/resources/extensions/context_extension.dart';
 import 'package:store_app/core/resources/localization/app_localizations_keys.dart';
 import 'package:store_app/core/utils/validator.dart';
+import 'package:store_app/features/auth/presentation/bloc/auth_bloc.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -15,19 +17,36 @@ class LoginForm extends StatefulWidget {
 
 class _LoginFormState extends State<LoginForm> {
   bool isShowPassword = true;
+
+  late AuthBloc _bloc;
+
+  @override
+  void initState() {
+    super.initState();
+    _bloc = context.read<AuthBloc>();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _bloc.emailController.dispose();
+    _bloc.passwordController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: _bloc.formKey,
       child: Column(
         children: [
           //Email
           CustomFadeInRight(
             duration: 200,
             child: CustomTextField(
-              controller: TextEditingController(),
+              controller: _bloc.emailController,
               hintText: context.tr(LangKeys.email),
               keyboardType: TextInputType.emailAddress,
-              validator: Validator.validateEmail,
+              validator: (value) => Validator.validateEmail(value, context),
             ),
           ),
           SizedBox(height: 25.h),
@@ -35,11 +54,11 @@ class _LoginFormState extends State<LoginForm> {
           CustomFadeInRight(
             duration: 200,
             child: CustomTextField(
-              controller: TextEditingController(),
+              controller: _bloc.passwordController,
               hintText: context.tr(LangKeys.password),
               keyboardType: TextInputType.visiblePassword,
               obscureText: isShowPassword,
-              validator: Validator.validatePassword,
+              validator: (value) => Validator.validatePassword(value, context),
 
               suffixIcon: IconButton(
                 onPressed: () {

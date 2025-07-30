@@ -1,6 +1,5 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,26 +30,29 @@ class StoreApp extends StatelessWidget {
         child: BlocBuilder<AppCubit, AppState>(
           builder: (context, state) {
             final cubit = context.read<AppCubit>();
-            return MaterialApp.router(
-              // device
-              useInheritedMediaQuery: true,
-              builder: DevicePreview.appBuilder,
-              title: 'Store App',
-              debugShowCheckedModeBanner: false,
-              routerConfig: AppRouter.router,
-              theme: cubit.isDark
-                  ? AppTheme.themeDark()
-                  : AppTheme.themeLight(),
+            return GestureDetector(
+              onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+              child: MaterialApp.router(
+                // device
+                // useInheritedMediaQuery: true,
+                // builder: DevicePreview.appBuilder,
+                title: 'Store App',
+                debugShowCheckedModeBanner: false,
+                routerConfig: AppRouter.router,
+                theme: cubit.isDark
+                    ? AppTheme.themeDark()
+                    : AppTheme.themeLight(),
 
-              // Localizations
-              locale: Locale(cubit.currentLangCode),
-              supportedLocales: AppLocalizations.supportedLocales,
-              localizationsDelegates: const [
-                AppLocalizations.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-              ],
+                // Localizations
+                locale: Locale(cubit.currentLangCode),
+                supportedLocales: AppLocalizations.supportedLocales,
+                localizationsDelegates: const [
+                  AppLocalizations.delegate,
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                ],
+              ),
             );
           },
         ),
