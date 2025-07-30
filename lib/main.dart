@@ -36,7 +36,7 @@ void main() async {
       builder: (context) => const StoreApp(),
       koryaadmin@gmail.com
       1234
-    ),l
+    ),
     */
     const StoreApp(),
   );
