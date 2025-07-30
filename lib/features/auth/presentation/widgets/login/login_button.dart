@@ -72,7 +72,8 @@ class LoginButton extends StatelessWidget {
   }
 
   void _validateThenDoLogin(BuildContext context) {
-    if (!context.read<AuthBloc>().formKey.currentState!.validate()) {
+    final form = context.read<AuthBloc>().formKey.currentState;
+    if (form != null && form.validate()) {
       context.read<AuthBloc>().add(AuthEvent.login());
     }
   }
