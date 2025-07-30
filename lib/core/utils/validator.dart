@@ -37,7 +37,7 @@ class Validator {
       return context.tr(LangKeys.fieldIsRequired);
     }
 
-    if (value.length < 3) {
+    if (value.length < 4) {
       return context.tr(LangKeys.passwordTooShort);
     }
 

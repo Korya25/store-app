@@ -45,6 +45,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
         // user ID
         await SharedPref.preferences.setInt(PrefKeys.userId, user.userId ?? 0);
+        await SharedPref.preferences.setString(
+          PrefKeys.userRole,
+          user.userRole ?? '',
+        );
         emit(AuthState.success(userRole: user.userRole ?? ''));
       },
       failure: (error) {

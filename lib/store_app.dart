@@ -30,26 +30,29 @@ class StoreApp extends StatelessWidget {
         child: BlocBuilder<AppCubit, AppState>(
           builder: (context, state) {
             final cubit = context.read<AppCubit>();
-            return MaterialApp.router(
-              // device
-              // useInheritedMediaQuery: true,
-              // builder: DevicePreview.appBuilder,
-              title: 'Store App',
-              debugShowCheckedModeBanner: false,
-              routerConfig: AppRouter.router,
-              theme: cubit.isDark
-                  ? AppTheme.themeDark()
-                  : AppTheme.themeLight(),
+            return GestureDetector(
+              onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+              child: MaterialApp.router(
+                // device
+                // useInheritedMediaQuery: true,
+                // builder: DevicePreview.appBuilder,
+                title: 'Store App',
+                debugShowCheckedModeBanner: false,
+                routerConfig: AppRouter.router,
+                theme: cubit.isDark
+                    ? AppTheme.themeDark()
+                    : AppTheme.themeLight(),
 
-              // Localizations
-              locale: Locale(cubit.currentLangCode),
-              supportedLocales: AppLocalizations.supportedLocales,
-              localizationsDelegates: const [
-                AppLocalizations.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-              ],
+                // Localizations
+                locale: Locale(cubit.currentLangCode),
+                supportedLocales: AppLocalizations.supportedLocales,
+                localizationsDelegates: const [
+                  AppLocalizations.delegate,
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                ],
+              ),
             );
           },
         ),
